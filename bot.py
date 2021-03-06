@@ -9,6 +9,10 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 @client.event
+async def on_ready():
+    print("Successfully connected to discord.")
+
+@client.event
 async def on_message(message):
     
     # Avoid replying to it's own messages
