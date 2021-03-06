@@ -25,14 +25,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    
     if message.author.bot:
         return
 
-    # checks if the bot has been @ed
-    if message.content == f'<@!{client.user.id}>':
+    # checks if the bot has been @ed (not in DMs)
+    if message.content == f'<@!{client.user.id}>' and message.guild is not None:
         msg = await message.author.send(INTRODUCTION)
         await message.channel.send(f'<@!{message.author.id}> Check your DM\'s')
         await msg.add_reaction('\N{THUMBS UP SIGN}')
-        await msg.add_reaction('\N{THUMBS DOWN SIGN}')
 
 client.run(TOKEN)
