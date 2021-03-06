@@ -25,6 +25,7 @@ async def on_ready():
 async def on_ready():
     print("Successfully connected to discord.")
 
+
 @client.event
 async def on_message(message):
     if message.author.bot:
