@@ -8,7 +8,7 @@ from discord import Client
 from discord import Game
 from dotenv import load_dotenv
 
-MIN_USERS_TO_START_MATCHING = 3
+MIN_USERS_TO_START_MATCHING = 2
 
 # load our environment variable to access the discord token
 load_dotenv()
@@ -22,7 +22,8 @@ client = Client(intents=intents)
 
 # gets the introduction and questions
 introduction = fp.get_intro()
-questions = fp.get_questions(client.user.avatar_url)
+# questions = fp.get_questions(client.user.avatar_url)
+questions = fp.get_questions()
 
 # a dictionary of users { user.id : user }
 users = {}
@@ -62,7 +63,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if not UserData(message.author.id, questions.length).survey_already_submitted:
+    if not UserData(message.author.id).survey_already_submitted:
         print('Sending introduction')
         msg = await message.author.send(introduction)
         await msg.add_reaction('✅')
@@ -86,9 +87,11 @@ async def on_reaction_add(reaction, user):
             print("adding to database")
             current_user = users[user.id]
             current_user.add_data(current_user.next_question(), emojis_to_int[reaction.emoji])
+            print(current_user.survey_data)
 
             await reaction.message.delete()
             if not users[user.id].commit_to_database():
+                print("Next Q: " + str(users[user.id].next_question()))
                 question_message = await user.send(embed=questions[users[user.id].next_question()])
                 for reaction in possible_reactions:
                     await question_message.add_reaction(reaction)
@@ -96,10 +99,10 @@ async def on_reaction_add(reaction, user):
                 database_cursor.execute("SELECT * FROM userdata")
                 if(len(database_cursor.fetchall()) >= MIN_USERS_TO_START_MATCHING):
                     matching_user = users[user.id].get_nearest_user()
-                    await user.send("Here is a user who has similar interests:")
+                    await user.send("Here is a user who has similar interests - try sending them a friend request!")
                     await user.send(client.get_user(matching_user[0].id).name)
                 else:
-                    await user.send("We don't have enough users to match people together yet, but we will start matching ASAP.")
+                    await user.send("Thank you for completing the survey. We don't have enough users to begin matching yet, but we will soon! You can expect some other users to reach out to you shortly!")
 
 
 client.run(TOKEN)

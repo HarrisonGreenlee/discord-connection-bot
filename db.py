@@ -3,14 +3,14 @@ import ast
 import math
 import datetime
 
+SURVEY_LENGTH = 10
 
 class UserData:
-    survey_length = 15
 
-    def __init__(self, id, length):
+    def __init__(self, id):
         self.id = id
         self.created_at = datetime.datetime.now()
-        survey_length = length
+        self.survey_length = SURVEY_LENGTH
 
         database_cursor.execute("SELECT * FROM userdata WHERE id = :id", {'id': id})
         user_data = database_cursor.fetchone()
@@ -21,28 +21,30 @@ class UserData:
         else:
             self.survey_already_submitted = False
             self.survey_data = []
-            for _ in range(survey_length):
+            for _ in range(self.survey_length):
                 self.survey_data.append(None)
 
     def add_data(self, survey_num, survey_data):
         self.survey_data[survey_num] = survey_data
 
     def all_questions_are_answered(self):
-        for i in range(survey_length):
+        for i in range(self.survey_length):
             if self.survey_data[i] is None:
                 return False
+        print("All questions have been answered.")
         return True
 
     def next_question(self):
         if self.all_questions_are_answered():
             return -1
 
-        for i in range(survey_length):
+        for i in range(self.survey_length):
             if self.survey_data[i] is None:
                 return i
 
     def commit_to_database(self):
         if not self.all_questions_are_answered():
+            print("Cannot commit to the database yet.")
             return False
 
         with database_connection:
@@ -58,13 +60,16 @@ class UserData:
             components = [(x - y) ** 2 for x, y in zip(self.survey_data, other.survey_data)]
             return math.sqrt(sum(components))
 
-        return int('inf')
+        #return int('inf')
+        return 999999999999999999
     
     def get_nearest_user(self):
         database_cursor.execute("SELECT * FROM userdata")
-        users_data = map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall())
+        #users_data = list(map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall()))
+        users = list(map(lambda xy: UserData(xy[0]), database_cursor.fetchall()))
         
-        sorted_users = list.sort(users_data, key = self.similarity_index)
+        #sorted_users = list.sort(users_data, key = (lambda xy: self.similarity_index(xy[1])))
+        sorted_users = list.sort(users, key = self.similarity_index)
         
         return sorted_users[0]
 
