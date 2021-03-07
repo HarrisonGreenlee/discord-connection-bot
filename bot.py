@@ -8,6 +8,8 @@ from discord import Client
 from discord import Game
 from dotenv import load_dotenv
 
+MIN_USERS_TO_START_MATCHING = 3
+
 # load our environment variable to access the discord token
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -91,7 +93,13 @@ async def on_reaction_add(reaction, user):
                 for reaction in possible_reactions:
                     await question_message.add_reaction(reaction)
             else:
-                await user.send("**DONE - DATA SUBMITTED :D**")
+                database_cursor.execute("SELECT * FROM userdata")
+                if(len(database_cursor.fetchall()) >= MIN_USERS_TO_START_MATCHING):
+                    matching_user = users[user.id].get_nearest_user()
+                    await user.send("Here is a user who has similar interests:")
+                    await user.send(client.get_user(matching_user[0].id).name)
+                else:
+                    await user.send("We don't have enough users to match people together yet, but we will start matching ASAP.")
 
 
 client.run(TOKEN)
