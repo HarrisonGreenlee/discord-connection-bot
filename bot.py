@@ -97,5 +97,5 @@ async def on_reaction_add(reaction, user):
 client.run(TOKEN)
 
 
-async def next_question(user):
+async def next_question():
     pass

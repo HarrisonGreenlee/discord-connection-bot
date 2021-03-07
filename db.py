@@ -3,8 +3,6 @@ import ast
 import math
 import datetime
 
-SURVEY_LENGTH = 3
-
 
 class UserData:
     def __init__(self, id):

@@ -1,188 +1,188 @@
-+ How important is it that your matches play the same games as you?
-- Not important at all
-- Slightly important
-- Very important
-- Extremely important
-- Overwhelmingly important
+How important is it that your matches play the same games as you?
+Not important at all
+Slightly important
+Very important
+Extremely important
+Overwhelmingly important
 
-+ How important is it that your matches have the same non-gaming interests as you?
-- Not important at all
-- Slightly important
-- Very important
-- Extremely important
-- Overwhelmingly important
+How important is it that your matches have the same non-gaming interests as you?
+Not important at all
+Slightly important
+Very important
+Extremely important
+Overwhelmingly important
 
-+ While on Discord, I prefer to converse with a small group of people rather than a large group
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+While on Discord, I prefer to converse with a small group of people rather than a large group
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I enjoy having intellectual conversations with people
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I enjoy having intellectual conversations with people
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I find it easy to initiate a new conversation topic during a silence
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I find it easy to initiate a new conversation topic during a silence
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I often find myself going on tangents when talking to someone
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I often find myself going on tangents when talking to someone
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I enjoy talking about hypothetical scenarios
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I enjoy talking about hypothetical scenarios
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I enjoy watching movies
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I enjoy watching movies
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ I consider myself an outdoorsy person 
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I consider myself an outdoorsy person 
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I am musically-inclined
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I am musically-inclined
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I routinely keep up with current political affairs
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I routinely keep up with current political affairs
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I enjoy watching TV series
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I enjoy watching TV series
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I enjoy keeping up with professional sports
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I enjoy keeping up with professional sports
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I am more selfless than selfish
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I am more selfless than selfish
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ It is very important to me to have good relationships with friends and family
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+It is very important to me to have good relationships with friends and family
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I would rather have a job that pays well rather than one I enjoy
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+I would rather have a job that pays well rather than one I enjoy
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ It is important for me to serve for others
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly Agree
+It is important for me to serve for others
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly Agree
 
-+ I love watching anime
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+I love watching anime
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ Bleach is better than Naruto
-- Strongly disagree
-- Disagree
-- Neither agree or disagree
-- Agree
-- Strongly agree
+Bleach is better than Naruto
+Strongly disagree
+Disagree
+Neither agree or disagree
+Agree
+Strongly agree
 
-+ How often do you play CS+GO?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play CS+GO?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play Dota 2?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play Dota 2?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play PUBG?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play PUBG?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play League of Legends?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play League of Legends?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play Valheim?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play Valheim?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play Rust?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play Rust?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play Overwatch?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play Overwatch?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
 
-+ How often do you play Apex Legends?
-- Not at all
-- A little bit
-- A fair amount
-- A large amount
-- Nearly all of the time
+How often do you play Apex Legends?
+Not at all
+A little bit
+A fair amount
+A large amount
+Nearly all of the time
