@@ -19,7 +19,10 @@ client = Client(intents=intents)
 introduction = fp.get_intro()
 questions = fp.get_questions()
 
-users = {}
+user_progress = {
+
+}
+
 emojis_to_int = {
     '1️⃣': 1,
     '2️⃣': 2,
