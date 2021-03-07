@@ -54,11 +54,19 @@ class UserData:
         return False
 
     def similarity_index(self, other):
-        if self.all_questions_are_answered() and other.all_questions_are_answered():
+        if self.id != other.id and (self.all_questions_are_answered() and other.all_questions_are_answered()):
             components = [(x - y) ** 2 for x, y in zip(self.survey_data, other.survey_data)]
             return math.sqrt(sum(components))
 
-        return -1
+        return int('inf')
+    
+    def get_nearest_user(self):
+        database_cursor.execute("SELECT * FROM userdata")
+        users_data = map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall())
+        
+        sorted_users = list.sort(users_data, key = self.similarity_index)
+        
+        return sorted_users[0]
 
 
 database_connection = sqlite3.connect("userdata.db")
