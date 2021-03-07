@@ -1,13 +1,20 @@
+import message_formatter as mf
+
+
+# gets the questions from a text file
 def get_questions():
     uncleaned_questions = open('Questions.txt').readlines()
     questions = []
-    arr = '```diff\n'
+    title = ''
+    description = ''
     for question in uncleaned_questions:
         if question == '\n':
-            questions.append(arr + '```')
-            arr = '```diff\n'
+            questions.append(mf.create_question(title, description))
+            description = ''
+        elif question.startswith('-'):
+            description += question
         else:
-            arr = arr + question
+            title = question
 
     return questions
 
