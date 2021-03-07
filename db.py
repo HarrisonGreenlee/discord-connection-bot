@@ -3,11 +3,14 @@ import ast
 import math
 import datetime
 
+# The length of the survey
 SURVEY_LENGTH = 10
 
 
+# Our UserData class
 class UserData:
 
+    # our class constructor
     def __init__(self, id):
         self.id = id
         self.created_at = datetime.datetime.now()
@@ -25,9 +28,11 @@ class UserData:
             for _ in range(self.survey_length):
                 self.survey_data.append(None)
 
+    # Adds data to the database
     def add_data(self, survey_num, survey_data):
         self.survey_data[survey_num] = survey_data
 
+    # Checks if all the questions are answered
     def all_questions_are_answered(self):
         for i in range(self.survey_length):
             if self.survey_data[i] is None:
@@ -35,6 +40,7 @@ class UserData:
         print("All questions have been answered.")
         return True
 
+    # Goes to the next question
     def next_question(self):
         if self.all_questions_are_answered():
             return -1
@@ -43,6 +49,7 @@ class UserData:
             if self.survey_data[i] is None:
                 return i
 
+    # Commits to the database
     def commit_to_database(self):
         if not self.all_questions_are_answered():
             print("Cannot commit to the database yet.")
@@ -54,6 +61,7 @@ class UserData:
             self.survey_already_submitted = True
             return True
 
+    # Our similarity index function
     def similarity_index(self, other):
         if self.id != other.id and (self.all_questions_are_answered() and other.all_questions_are_answered()):
             components = [(x - y) ** 2 for x, y in zip(self.survey_data, other.survey_data)]
@@ -61,7 +69,8 @@ class UserData:
 
         # return int('inf')
         return 999999999999999999
-    
+
+    # Gets the nearest user
     def get_nearest_user(self):
         database_cursor.execute("SELECT * FROM userdata")
         # users_data = list(map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall()))
@@ -71,7 +80,6 @@ class UserData:
         list.sort(users, key=self.similarity_index)
         
         return users[0]
-
 
 database_connection = sqlite3.connect("userdata.db")
 database_cursor = database_connection.cursor()

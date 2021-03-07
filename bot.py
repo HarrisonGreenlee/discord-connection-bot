@@ -58,7 +58,7 @@ async def on_ready():
     await client.change_presence(activity=Game('Send me a message!'))
 
 
-# performs tasks whwn a message is received
+# performs tasks when a message is received
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -110,7 +110,3 @@ async def on_reaction_add(reaction, user):
 
 
 client.run(TOKEN)
-
-
-async def next_question():
-    pass
