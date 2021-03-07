@@ -64,7 +64,9 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if not UserData(message.author.id).survey_already_submitted:
+    print(message.content == f'<@!{client.user.id}>')
+    if not UserData(message.author.id).survey_already_submitted \
+            and (message.content == f'<@!{client.user.id}>' or message.guild is None):
         print('Sending introduction')
         msg = await message.author.send(introduction)
         await msg.add_reaction('✅')
