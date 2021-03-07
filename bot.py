@@ -19,9 +19,7 @@ client = Client(intents=intents)
 introduction = fp.get_intro()
 questions = fp.get_questions()
 
-user_progress = {
-
-}
+users = {}
 
 possible_reactions = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣']
 
@@ -34,12 +32,6 @@ emojis_to_int = {
     '❌': 1,
     '✅': 5
 }
-
-
-async def begin_survey(target_user):
-    msg = await target_user.send(INTRODUCTION)
-    await msg.add_reaction('\N{THUMBS UP SIGN}')
-    users.append(User(target_user.id))
 
 
 @client.event
