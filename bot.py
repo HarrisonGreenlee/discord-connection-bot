@@ -100,7 +100,7 @@ async def on_reaction_add(reaction, user):
                 if(len(database_cursor.fetchall()) >= MIN_USERS_TO_START_MATCHING):
                     matching_user = users[user.id].get_nearest_user()
                     await user.send("Here is a user who has similar interests - try sending them a friend request!")
-                    await user.send(client.get_user(matching_user[0].id).name)
+                    await user.send(client.get_user(matching_user.id).name)
                 else:
                     await user.send("Thank you for completing the survey. We don't have enough users to begin matching yet, but we will soon! You can expect some other users to reach out to you shortly!")
 

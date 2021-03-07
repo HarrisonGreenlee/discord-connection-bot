@@ -69,9 +69,9 @@ class UserData:
         users = list(map(lambda xy: UserData(xy[0]), database_cursor.fetchall()))
         
         #sorted_users = list.sort(users_data, key = (lambda xy: self.similarity_index(xy[1])))
-        sorted_users = list.sort(users, key = self.similarity_index)
+        list.sort(users, key = self.similarity_index)
         
-        return sorted_users[0]
+        return users[0]
 
 
 database_connection = sqlite3.connect("userdata.db")
