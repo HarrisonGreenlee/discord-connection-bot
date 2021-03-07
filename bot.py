@@ -20,7 +20,7 @@ client = Client(intents=intents)
 
 # gets the introduction and questions
 introduction = fp.get_intro()
-questions = fp.get_questions()
+questions = fp.get_questions(client.user.avatar_url)
 
 # a dictionary of users { user.id : user }
 users = {}
