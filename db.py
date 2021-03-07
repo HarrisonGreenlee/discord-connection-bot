@@ -5,6 +5,7 @@ import datetime
 
 SURVEY_LENGTH = 10
 
+
 class UserData:
 
     def __init__(self, id):
@@ -53,23 +54,21 @@ class UserData:
             self.survey_already_submitted = True
             return True
 
-        return False
-
     def similarity_index(self, other):
         if self.id != other.id and (self.all_questions_are_answered() and other.all_questions_are_answered()):
             components = [(x - y) ** 2 for x, y in zip(self.survey_data, other.survey_data)]
             return math.sqrt(sum(components))
 
-        #return int('inf')
+        # return int('inf')
         return 999999999999999999
     
     def get_nearest_user(self):
         database_cursor.execute("SELECT * FROM userdata")
-        #users_data = list(map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall()))
+        # users_data = list(map((lambda xy: (xy[0], ast.literal_eval(xy[1]))), database_cursor.fetchall()))
         users = list(map(lambda xy: UserData(xy[0]), database_cursor.fetchall()))
         
-        #sorted_users = list.sort(users_data, key = (lambda xy: self.similarity_index(xy[1])))
-        list.sort(users, key = self.similarity_index)
+        # sorted_users = list.sort(users_data, key = (lambda xy: self.similarity_index(xy[1])))
+        list.sort(users, key=self.similarity_index)
         
         return users[0]
 

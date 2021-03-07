@@ -58,6 +58,7 @@ async def on_ready():
     await client.change_presence(activity=Game('Send me a message!'))
 
 
+# performs tasks whwn a message is received
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -69,6 +70,7 @@ async def on_message(message):
         await msg.add_reaction('✅')
 
 
+# performs tasks when a reaction is added
 @client.event
 async def on_reaction_add(reaction, user):
 
@@ -97,12 +99,14 @@ async def on_reaction_add(reaction, user):
                     await question_message.add_reaction(reaction)
             else:
                 database_cursor.execute("SELECT * FROM userdata")
-                if(len(database_cursor.fetchall()) >= MIN_USERS_TO_START_MATCHING):
+                if len(database_cursor.fetchall()) >= MIN_USERS_TO_START_MATCHING:
                     matching_user = users[user.id].get_nearest_user()
                     await user.send("Here is a user who has similar interests - try sending them a friend request!")
                     await user.send(client.get_user(matching_user.id).name)
                 else:
-                    await user.send("Thank you for completing the survey. We don't have enough users to begin matching yet, but we will soon! You can expect some other users to reach out to you shortly!")
+                    await user.send("Thank you for completing the survey. We don't have "
+                                    "enough users to begin matching yet, but we will soon! "
+                                    "You can expect some other users to reach out to you shortly!")
 
 
 client.run(TOKEN)
