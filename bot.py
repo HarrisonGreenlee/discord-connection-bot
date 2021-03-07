@@ -60,7 +60,7 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    if not UserData(message.author.id).survey_already_submitted:
+    if not UserData(message.author.id, questions.length).survey_already_submitted:
         print('Sending introduction')
         msg = await message.author.send(introduction)
         await msg.add_reaction('✅')

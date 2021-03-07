@@ -5,9 +5,12 @@ import datetime
 
 
 class UserData:
-    def __init__(self, id):
+    survey_length = 15
+
+    def __init__(self, id, length):
         self.id = id
         self.created_at = datetime.datetime.now()
+        survey_length = length
 
         database_cursor.execute("SELECT * FROM userdata WHERE id = :id", {'id': id})
         user_data = database_cursor.fetchone()
@@ -18,14 +21,14 @@ class UserData:
         else:
             self.survey_already_submitted = False
             self.survey_data = []
-            for _ in range(SURVEY_LENGTH):
+            for _ in range(survey_length):
                 self.survey_data.append(None)
 
     def add_data(self, survey_num, survey_data):
         self.survey_data[survey_num] = survey_data
 
     def all_questions_are_answered(self):
-        for i in range(SURVEY_LENGTH):
+        for i in range(survey_length):
             if self.survey_data[i] is None:
                 return False
         return True
@@ -34,7 +37,7 @@ class UserData:
         if self.all_questions_are_answered():
             return -1
 
-        for i in range(SURVEY_LENGTH):
+        for i in range(survey_length):
             if self.survey_data[i] is None:
                 return i
 
@@ -60,6 +63,7 @@ class UserData:
 
 database_connection = sqlite3.connect("userdata.db")
 database_cursor = database_connection.cursor()
+
 
 # If the database table does not exist, create one.
 # This is mostly just for testing purposes.
