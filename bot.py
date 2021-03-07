@@ -23,6 +23,8 @@ user_progress = {
 
 }
 
+possible_reactions = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣']
+
 emojis_to_int = {
     '1️⃣': 1,
     '2️⃣': 2,
@@ -72,11 +74,8 @@ async def on_reaction_add(reaction, user):
         current_user = UserData(user.id)
         users[user.id] = current_user
         question_message = await user.send(questions[current_user.next_question()])
-        await question_message.add_reaction('1️⃣')
-        await question_message.add_reaction('2️⃣')
-        await question_message.add_reaction('3️⃣')
-        await question_message.add_reaction('4️⃣')
-        await question_message.add_reaction('5️⃣')
+        for reaction in possible_reactions:
+            await question_message.add_reaction(reaction)
 
     elif user != client.user:
         if reaction.emoji in emojis_to_int:
@@ -87,11 +86,8 @@ async def on_reaction_add(reaction, user):
             await reaction.message.delete()
             if not users[user.id].commit_to_database():
                 question_message = await user.send(questions[users[user.id].next_question()])
-                await question_message.add_reaction('1️⃣')
-                await question_message.add_reaction('2️⃣')
-                await question_message.add_reaction('3️⃣')
-                await question_message.add_reaction('4️⃣')
-                await question_message.add_reaction('5️⃣')
+                for reaction in possible_reactions:
+                    await question_message.add_reaction(reaction)
             else:
                 await user.send("**DONE - DATA SUBMITTED :D**")
 
